@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "totem-enchanting-gametest",
+  "version": "1.0.0",
+  "name": "TotemEnchanting GameTests",
+  "environment": "server",
+  "entrypoints": {
+    "fabric-gametest": [
+      "dev.totem.enchanting.gametest.EnchantingPowerGameTest"
+    ]
+  },
+  "depends": {
+    "fabricloader": "*",
+    "fabric-api": "*",
+    "minecraft": "*",
+    "totem-enchanting": "*"
+  }
+}
