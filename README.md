@@ -1,11 +1,83 @@
 # TotemEnchanting
 
-TotemEnchanting owns enchanting-power behavior and Enchanting Table changes.
-It depends on TotemCore and Fabric API, not on another feature module.
+TotemEnchanting 讓雕紋書櫃依內部實際書本提供附魔力，並把附魔台的可用
+力量上限從原版 15 書櫃擴展到 **64**。
 
-`0.1.1` is the current candidate built against TotemCore `0.2.0`. It owns the
-weighted Chiseled Bookshelf power helper and the Enchanting Table/Menu Mixins
-while preserving Minecraft's existing enchantment identifiers. `0.1.0`
-remains the immutable rollback artifact.
+目前候選版本為 **0.1.1**，精確搭配 TotemCore **0.2.0**。
 
-See [EXTRACTION.md](EXTRACTION.md) for ownership and validation rules.
+## 安裝
+
+建議 Client 與 Server 都放入：
+
+1. Fabric API `0.154.2+26.2`
+2. TotemCore `0.2.0`
+3. TotemEnchanting `0.1.1`
+
+| 項目 | 需求 |
+| --- | --- |
+| Minecraft | 26.2 |
+| Fabric Loader | 0.19.3+ |
+| Java | 25+ |
+| 必要 Totem 模組 | `totem-core =0.2.0` |
+
+Enchanting 不依賴其他功能模組，也不新增自訂附魔 ID。使用 DeadRecall
+2.4.4 整合 JAR 時不要再安裝獨立 TotemEnchanting。
+
+## 使用教學
+
+1. 正常放置附魔台。
+2. 在原版會檢查書櫃的位置放置雕紋書櫃，附魔台與書櫃間保留空氣。
+3. 將普通書或附魔書放進雕紋書櫃。
+4. 打開附魔台；三個選項會依所有有效書本的加權力量重新計算。
+
+## 附魔力計算
+
+| 書櫃內容 | 附魔力 |
+| --- | ---: |
+| 普通書 | 1 |
+| 附魔書 | 該書所有附魔等級總和 |
+| 空槽或其他物品 | 0 |
+
+範例：
+
+- 一個裝滿 6 本普通書的雕紋書櫃提供 6 點。
+- 一本同時有等級 III 與等級 II 附魔的書提供 5 點。
+- 所有有效雕紋書櫃累加，總上限為 64。
+
+## 30–64 品質曲線
+
+Minecraft 附魔定義有自己的有效 power 區間；直接把 64 丟進原版選擇器
+反而可能排除高階附魔。因此本模組：
+
+- 顯示成本與玩家等級需求仍可提高到 64。
+- 把 30–64 映射到原版相容的 30–50 候選區間。
+- 高 power 最多增加三次 deterministic 品質候選。
+- 永遠保留同一物品、slot 與 seed 的 30 級基準結果。
+- 候選仍由原版 `selectEnchantment` 產生，不繞過物品／附魔相容規則。
+
+因此高於 30 的結果不會比同條件的 30 級基準差，但不保證出現指定
+附魔。
+
+## 粒子提示
+
+有效雕紋書櫃會向附魔台產生粒子。普通書越多，粒子越頻繁；附魔書
+總等級越高，粒子的頻率、速度與數量越高。粒子只提供視覺回饋，不會
+額外增加力量。
+
+## 疑難排解
+
+- 沒有增加力量：確認使用雕紋書櫃、槽內是書／附魔書，且位於原版
+  有效書櫃位置。
+- 粒子沒有到附魔台：清除兩者之間的阻擋方塊。
+- 超過 64 沒有變化：總力量會 clamp 到 64。
+- 多人遊戲顯示不一致：確認 Server 與 Client 使用相同模組組合。
+
+## 開發與驗證
+
+```bash
+./gradlew build
+```
+
+0.1.1 已通過 3/3 required Fabric GameTests，涵蓋普通書、複合附魔書、
+64 點上限與附魔台 option 計算。所有權與驗證規則見
+[EXTRACTION.md](EXTRACTION.md)。
