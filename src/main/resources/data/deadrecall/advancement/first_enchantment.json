@@ -1,0 +1,24 @@
+{
+  "parent": "deadrecall:enchanting_root",
+  "criteria": {
+    "enchanted_item": {
+      "trigger": "minecraft:enchanted_item"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.deadrecall.enchanting_first_enchantment.description"
+    },
+    "icon": {
+      "id": "minecraft:enchanted_book"
+    },
+    "title": {
+      "translate": "advancements.deadrecall.enchanting_first_enchantment.title"
+    }
+  },
+  "requirements": [
+    [
+      "enchanted_item"
+    ]
+  ]
+}
