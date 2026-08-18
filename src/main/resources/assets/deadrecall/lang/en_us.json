@@ -1,6 +1,11 @@
 {
   "advancements.deadrecall.enchanting_root.title": "Totem Enchanting",
-  "advancements.deadrecall.enchanting_root.description": "Strengthen the enchantment table with chiseled bookshelves.",
+  "advancements.deadrecall.enchanting_root.description": "Craft an Enchanting Table, then record it with a Totem guide or a book.",
+  "advancements.deadrecall.enchanting_manual.title": "Record the Shelves",
+  "advancements.deadrecall.enchanting_manual.description": "Use a guide or book on an Enchanting Table to obtain the Enchanting method guide.",
   "advancements.deadrecall.enchanting_first_enchantment.title": "Borrowed Power",
-  "advancements.deadrecall.enchanting_first_enchantment.description": "Enchant an item."
+  "advancements.deadrecall.enchanting_first_enchantment.description": "Enchant an item.",
+  "book.deadrecall.enchanting_manual.title": "Enchanting Method Guide",
+  "book.deadrecall.enchanting_manual.page.1": "POWER\n\nPlace Chiseled Bookshelves in valid vanilla shelf positions. Normal books add 1 power; enchanted books add their total enchantment levels.",
+  "book.deadrecall.enchanting_manual.page.2": "QUALITY\n\nValid shelves combine up to 64 power. Keep air between shelf and table. Higher power improves candidates without bypassing vanilla compatibility."
 }

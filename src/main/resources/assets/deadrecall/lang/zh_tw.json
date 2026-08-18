@@ -1,6 +1,11 @@
 {
   "advancements.deadrecall.enchanting_root.title": "Totem Enchanting",
-  "advancements.deadrecall.enchanting_root.description": "用雕紋書架強化附魔台。",
+  "advancements.deadrecall.enchanting_root.description": "製作附魔台，再拿 Totem 手冊或書本對它按右鍵記錄方法。",
+  "advancements.deadrecall.enchanting_manual.title": "記錄書架",
+  "advancements.deadrecall.enchanting_manual.description": "拿手冊或書本對附魔台按右鍵，取得 Enchanting 方法手冊。",
   "advancements.deadrecall.enchanting_first_enchantment.title": "借來的力量",
-  "advancements.deadrecall.enchanting_first_enchantment.description": "附魔一件物品。"
+  "advancements.deadrecall.enchanting_first_enchantment.description": "附魔一件物品。",
+  "book.deadrecall.enchanting_manual.title": "Enchanting 方法手冊",
+  "book.deadrecall.enchanting_manual.page.1": "力量\n\n把雕紋書櫃放在原版有效書櫃位置。普通書提供 1 點力量；附魔書提供其中所有附魔等級的總和。",
+  "book.deadrecall.enchanting_manual.page.2": "品質\n\n有效書櫃最高累加至 64 點力量。書櫃與附魔台之間需保持空氣；高力量不會繞過原版相容規則。"
 }
