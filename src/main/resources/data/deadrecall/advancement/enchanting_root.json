@@ -1,8 +1,11 @@
 {
   "parent": "deadrecall:root",
   "criteria": {
-    "ready": {
-      "trigger": "minecraft:tick"
+    "crafted_enchanting_table": {
+      "conditions": {
+        "recipe_id": "minecraft:enchanting_table"
+      },
+      "trigger": "minecraft:recipe_crafted"
     }
   },
   "display": {
@@ -14,14 +17,14 @@
     "icon": {
       "id": "minecraft:enchanting_table"
     },
-    "show_toast": false,
+    "show_toast": true,
     "title": {
       "translate": "advancements.deadrecall.enchanting_root.title"
     }
   },
   "requirements": [
     [
-      "ready"
+      "crafted_enchanting_table"
     ]
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "parent": "deadrecall:enchanting_root",
+  "parent": "deadrecall:enchanting_manual",
   "criteria": {
     "enchanted_item": {
       "trigger": "minecraft:enchanted_item"

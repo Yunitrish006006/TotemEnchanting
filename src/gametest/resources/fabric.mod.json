@@ -6,7 +6,8 @@
   "environment": "server",
   "entrypoints": {
     "fabric-gametest": [
-      "dev.totem.enchanting.gametest.EnchantingPowerGameTest"
+      "dev.totem.enchanting.gametest.EnchantingPowerGameTest",
+      "dev.totem.enchanting.gametest.EnchantingManualGameTest"
     ]
   },
   "depends": {
