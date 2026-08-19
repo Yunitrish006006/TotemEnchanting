@@ -24,6 +24,9 @@ public final class EnchantingPowerHelper {
         int power = 0;
 
         for (BlockPos offset : EnchantingTableBlock.BOOKSHELF_OFFSETS) {
+            if (!hasVisiblePath(level, pos, offset)) {
+                continue;
+            }
             BlockEntity be = level.getBlockEntity(pos.offset(offset));
             if (be instanceof ChiseledBookShelfBlockEntity shelf) {
                 for (ItemStack stack : shelf.getItems()) {
@@ -71,5 +74,12 @@ public final class EnchantingPowerHelper {
         }
 
         return level;
+    }
+
+    private static boolean hasVisiblePath(Level level, BlockPos tablePos, BlockPos offset) {
+        int stepX = Integer.signum(offset.getX());
+        int stepZ = Integer.signum(offset.getZ());
+        return level.getBlockState(tablePos.offset(stepX, 0, stepZ)).isAir()
+                && level.getBlockState(tablePos.offset(stepX, 1, stepZ)).isAir();
     }
 }
