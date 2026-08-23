@@ -8,7 +8,7 @@ import net.minecraft.resources.Identifier;
 
 import java.util.List;
 
-/** Integration coverage for the recovered Enchanting section in the shared Totem Manual. */
+/** Integration coverage for the Enchanting section in the shared Totem Manual. */
 public final class EnchantingManualGameTest {
     private static final Identifier SECTION_ID =
             Identifier.fromNamespaceAndPath("totem", "enchanting/manual");
@@ -20,8 +20,8 @@ public final class EnchantingManualGameTest {
             helper.fail("Enchanting manual section was not registered");
             return;
         }
-        if (section.order() != 400 || section.pageKeys().size() != 2) {
-            helper.fail("Enchanting manual section metadata did not match the recovered 0.1.5 contract");
+        if (section.order() != 400 || section.pageKeys().size() != 3) {
+            helper.fail("Enchanting manual section did not include the Bane target reference page");
             return;
         }
         var manual = TotemManualAssembler.create(List.of(section));

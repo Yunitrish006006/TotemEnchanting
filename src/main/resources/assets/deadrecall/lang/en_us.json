@@ -7,5 +7,6 @@
   "advancements.deadrecall.enchanting_first_enchantment.description": "Enchant an item.",
   "book.deadrecall.enchanting_manual.title": "Enchanting Method Guide",
   "book.deadrecall.enchanting_manual.page.1": "POWER\n\nPlace Chiseled Bookshelves in valid vanilla shelf positions. Normal books add 1 power; enchanted books add their total enchantment levels.",
-  "book.deadrecall.enchanting_manual.page.2": "QUALITY\n\nValid shelves combine up to 64 power. Keep air between shelf and table. Higher power improves candidates without bypassing vanilla compatibility."
+  "book.deadrecall.enchanting_manual.page.2": "QUALITY\n\nValid shelves combine up to 64 power. Keep air between shelf and table. Higher power improves candidates without bypassing vanilla compatibility.",
+  "book.deadrecall.enchanting_manual.page.3": "BANE OF ARTHROPODS\n\nIn addition to vanilla arthropods, Bane also affects Skeletons, Strays, Bogged, Wither Skeletons, Skeleton Horses, and Parched. Vanilla bonus damage and Slowness still apply."
 }
