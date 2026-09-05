@@ -1,0 +1,12 @@
+{
+  "advancements.deadrecall.enchanting_root.title": "Totem Enchanting",
+  "advancements.deadrecall.enchanting_root.description": "Fabrica una mesa de encantamientos y regístrala con una guía o un libro de Totem.",
+  "advancements.deadrecall.enchanting_manual.title": "Registra las estanterías",
+  "advancements.deadrecall.enchanting_manual.description": "Usa una guía o un libro sobre una mesa de encantamientos para obtener la guía de métodos de encantamiento.",
+  "advancements.deadrecall.enchanting_first_enchantment.title": "Poder prestado",
+  "advancements.deadrecall.enchanting_first_enchantment.description": "Encanta un objeto.",
+  "book.deadrecall.enchanting_manual.title": "Guía de métodos de encantamiento",
+  "book.deadrecall.enchanting_manual.page.1": "PODER\n\nColoca estanterías cinceladas en posiciones de estantería válidas de Minecraft. Los libros normales aportan 1 de poder; los libros encantados aportan la suma de sus niveles de encantamiento.",
+  "book.deadrecall.enchanting_manual.page.2": "CALIDAD\n\nLas estanterías válidas combinan hasta 64 de poder. Deja aire entre la estantería y la mesa. Un poder mayor mejora las opciones sin eludir la compatibilidad de Minecraft.",
+  "book.deadrecall.enchanting_manual.page.3": "PERDICIÓN DE LOS ARTRÓPODOS\n\nAdemás de los artrópodos de Minecraft, Perdición también afecta a esqueletos, errantes, ahogados, esqueletos del Wither, caballos esqueleto y resecos. El daño adicional y la lentitud de Minecraft siguen aplicándose."
+}
