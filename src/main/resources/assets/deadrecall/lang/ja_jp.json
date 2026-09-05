@@ -1,0 +1,12 @@
+{
+  "advancements.deadrecall.enchanting_root.title": "Totemエンチャント",
+  "advancements.deadrecall.enchanting_root.description": "エンチャントテーブルを作り、Totemガイドまたは本で記録する。",
+  "advancements.deadrecall.enchanting_manual.title": "本棚を記録する",
+  "advancements.deadrecall.enchanting_manual.description": "エンチャントテーブルにガイドまたは本を使用し、エンチャント手法ガイドを入手する。",
+  "advancements.deadrecall.enchanting_first_enchantment.title": "借りた力",
+  "advancements.deadrecall.enchanting_first_enchantment.description": "アイテムにエンチャントを付与する。",
+  "book.deadrecall.enchanting_manual.title": "エンチャント手法ガイド",
+  "book.deadrecall.enchanting_manual.page.1": "力\n\n有効なバニラの本棚位置に模様入りの本棚を置きます。通常の本は1の力を加え、エンチャント本はエンチャントレベルの合計を加えます。",
+  "book.deadrecall.enchanting_manual.page.2": "品質\n\n有効な本棚は最大64の力を組み合わせます。本棚とテーブルの間には空気を保ってください。高い力は、バニラの互換性を無視せず候補を改善します。",
+  "book.deadrecall.enchanting_manual.page.3": "虫特効\n\nバニラの虫系に加え、虫特効はスケルトン、ストレイ、ボグド、ウィザースケルトン、スケルトンホース、パーチドにも効果があります。バニラの追加ダメージと移動速度低下も引き続き適用されます。"
+}
