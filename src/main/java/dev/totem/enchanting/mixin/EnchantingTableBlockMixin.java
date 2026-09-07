@@ -35,13 +35,13 @@ public abstract class EnchantingTableBlockMixin {
                     target = "Lnet/minecraft/world/level/block/EnchantingTableBlock;isValidBookShelf(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;)Z"
             )
     )
-    private static boolean deadrecall$acceptChiseledBookshelf(Level level, BlockPos tablePos, BlockPos offset) {
+    private static boolean totem$acceptChiseledBookshelf(Level level, BlockPos tablePos, BlockPos offset) {
         BlockEntity be = level.getBlockEntity(tablePos.offset(offset));
         return be instanceof ChiseledBookShelfBlockEntity;
     }
 
     @Inject(method = "animateTick", at = @At("TAIL"))
-    private void deadrecall$boostParticleRate(
+    private void totem$boostParticleRate(
             BlockState state,
             Level level,
             BlockPos tablePos,

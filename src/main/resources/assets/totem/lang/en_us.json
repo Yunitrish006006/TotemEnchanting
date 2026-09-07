@@ -1,0 +1,12 @@
+{
+  "advancements.totem.enchanting_root.title": "Totem Enchanting",
+  "advancements.totem.enchanting_root.description": "Craft an Enchanting Table, then record it with a Totem guide or a book.",
+  "advancements.totem.enchanting_manual.title": "Record the Shelves",
+  "advancements.totem.enchanting_manual.description": "Use a guide or book on an Enchanting Table to obtain the Enchanting method guide.",
+  "advancements.totem.enchanting_first_enchantment.title": "Borrowed Power",
+  "advancements.totem.enchanting_first_enchantment.description": "Enchant an item.",
+  "book.totem.enchanting_manual.title": "Enchanting Method Guide",
+  "book.totem.enchanting_manual.page.1": "POWER\n\nPlace Chiseled Bookshelves in valid vanilla shelf positions. Normal books add 1 power; enchanted books add their total enchantment levels.",
+  "book.totem.enchanting_manual.page.2": "QUALITY\n\nValid shelves combine up to 64 power. Keep air between shelf and table. Higher power improves candidates without bypassing vanilla compatibility.",
+  "book.totem.enchanting_manual.page.3": "BANE OF ARTHROPODS\n\nIn addition to vanilla arthropods, Bane also affects Skeletons, Strays, Bogged, Wither Skeletons, Skeleton Horses, and Parched. Vanilla bonus damage and Slowness still apply."
+}

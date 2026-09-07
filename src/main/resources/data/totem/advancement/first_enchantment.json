@@ -1,8 +1,8 @@
 {
-  "parent": "deadrecall:enchanting_manual",
+  "parent": "totem:enchanting_manual",
   "criteria": {
     "enchanted_item": {
-      "trigger": "minecraft:impossible"
+      "trigger": "minecraft:enchanted_item"
     }
   },
   "display": {

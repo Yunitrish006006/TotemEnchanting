@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.Overwrite;
 public abstract class EnchantmentHelperMixin {
 
     /**
-     * @author DeadRecall
+     * @author TotemEnchanting
      * @reason Remove 15 bookshelf cap
      */
     @Overwrite

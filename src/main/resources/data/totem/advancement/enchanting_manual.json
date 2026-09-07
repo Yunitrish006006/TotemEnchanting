@@ -1,5 +1,5 @@
 {
-  "parent": "deadrecall:enchanting_root",
+  "parent": "totem:enchanting_root",
   "criteria": {
     "has_manual": {
       "trigger": "minecraft:impossible"

@@ -64,9 +64,9 @@ public abstract class EnchantmentMenuMixin {
     private Container enchantSlots;
 
     /**
-     * Replaces the bookshelf count used by the vanilla menu with DeadRecall's weighted book power.
+     * Replaces the bookshelf count used by the vanilla menu with TotemEnchanting's weighted book power.
      *
-     * @author DeadRecall
+     * @author TotemEnchanting
      * @reason Custom chiseled-bookshelf power system.
      */
     @Overwrite
@@ -130,7 +130,7 @@ public abstract class EnchantmentMenuMixin {
      * item, slot and enchantment seed.</p>
      */
     @Inject(method = "getEnchantmentList", at = @At("HEAD"), cancellable = true)
-    private void deadrecall$improveHighPowerEnchantments(
+    private void totem$improveHighPowerEnchantments(
             RegistryAccess registryAccess,
             ItemStack itemStack,
             int slot,
@@ -149,16 +149,16 @@ public abstract class EnchantmentMenuMixin {
         int clampedCost = Mth.clamp(enchantmentCost, 1, MAX_DISPLAYED_POWER);
         long baseSeed = (long) this.enchantmentSeed.get() + slot;
 
-        List<EnchantmentInstance> best = deadrecall$selectCandidate(
+        List<EnchantmentInstance> best = totem$selectCandidate(
                 availableEnchantments,
                 itemStack,
                 Math.min(clampedCost, VANILLA_QUALITY_POWER),
                 baseSeed
         );
-        int bestScore = deadrecall$qualityScore(best);
+        int bestScore = totem$qualityScore(best);
 
         if (clampedCost > VANILLA_QUALITY_POWER) {
-            int selectionPower = deadrecall$selectionPower(clampedCost);
+            int selectionPower = totem$selectionPower(clampedCost);
             int rerolls = Math.min(
                     MAX_QUALITY_REROLLS,
                     1 + (clampedCost - VANILLA_QUALITY_POWER - 1) / QUALITY_REROLL_STEP
@@ -166,13 +166,13 @@ public abstract class EnchantmentMenuMixin {
 
             for (int attempt = 0; attempt < rerolls; attempt++) {
                 long candidateSeed = baseSeed + QUALITY_SEED_GAMMA * (attempt + 1L);
-                List<EnchantmentInstance> candidate = deadrecall$selectCandidate(
+                List<EnchantmentInstance> candidate = totem$selectCandidate(
                         availableEnchantments,
                         itemStack,
                         selectionPower,
                         candidateSeed
                 );
-                int candidateScore = deadrecall$qualityScore(candidate);
+                int candidateScore = totem$qualityScore(candidate);
                 if (candidateScore > bestScore) {
                     best = candidate;
                     bestScore = candidateScore;
@@ -186,14 +186,14 @@ public abstract class EnchantmentMenuMixin {
         cir.setReturnValue(best);
     }
 
-    private static int deadrecall$selectionPower(int displayedCost) {
+    private static int totem$selectionPower(int displayedCost) {
         int extraCost = displayedCost - VANILLA_QUALITY_POWER;
         int extraRange = MAX_SELECTION_POWER - VANILLA_QUALITY_POWER;
         int displayedRange = MAX_DISPLAYED_POWER - VANILLA_QUALITY_POWER;
         return VANILLA_QUALITY_POWER + Math.round(extraCost * (float) extraRange / displayedRange);
     }
 
-    private static List<EnchantmentInstance> deadrecall$selectCandidate(
+    private static List<EnchantmentInstance> totem$selectCandidate(
             HolderSet.Named<Enchantment> availableEnchantments,
             ItemStack itemStack,
             int selectionPower,
@@ -214,7 +214,7 @@ public abstract class EnchantmentMenuMixin {
         return candidate;
     }
 
-    private static int deadrecall$qualityScore(List<EnchantmentInstance> enchantments) {
+    private static int totem$qualityScore(List<EnchantmentInstance> enchantments) {
         int score = 0;
         for (EnchantmentInstance enchantment : enchantments) {
             int level = enchantment.level();

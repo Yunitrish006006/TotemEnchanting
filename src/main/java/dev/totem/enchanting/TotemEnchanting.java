@@ -12,6 +12,6 @@ public final class TotemEnchanting implements ModInitializer {
     @Override
     public void onInitialize() {
         EnchantingManual.register();
-        LOGGER.info("TotemEnchanting initialized without DeadRecall implementation dependency");
+        LOGGER.info("TotemEnchanting initialized");
     }
 }

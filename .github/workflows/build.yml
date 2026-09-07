@@ -41,7 +41,7 @@ jobs:
           chmod +x .lockstep/TotemCore/gradlew gradlew
           ./.lockstep/TotemCore/gradlew -p .lockstep/TotemCore jar --no-daemon --stacktrace
           core_version="$(sed -n 's/^mod_version=//p' .lockstep/TotemCore/gradle.properties)"
-          test "$core_version" = '0.7.0'
+          test "$core_version" = '0.7.18'
           test -f ".lockstep/TotemCore/build/libs/totem-core-${core_version}.jar"
 
       - name: Compile and test Enchanting

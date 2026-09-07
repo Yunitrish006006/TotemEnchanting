@@ -20,8 +20,8 @@ TotemEnchanting 讓雕紋書櫃依內部實際書本提供附魔力，並把附�
 | Java | 25+ |
 | 必要 Totem 模組 | `totem-core =0.6.0` |
 
-Enchanting 不依賴其他功能模組，也不新增自訂附魔 ID。使用 DeadRecall
-2.4.7 整合 JAR 時不要再安裝獨立 TotemEnchanting。
+Enchanting 不依賴其他功能模組，也不新增自訂附魔 ID。舊整合 JAR 不應再與
+獨立 TotemEnchanting 並用。
 
 ## 使用教學
 
