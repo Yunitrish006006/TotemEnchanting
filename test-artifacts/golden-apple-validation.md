@@ -18,4 +18,4 @@ Commands used from TotemEnchanting with Java 25:
 
 Logs: `/tmp/enchanting-golden-apple-final.log`, `/tmp/enchanting-apple-production.log`.
 JAR SHA-256: `0700b4f7b3947076f4417e6b6753909eb0e16b46b720ad32f5d3a24c444baecc`.
-Local candidate only; not committed, pushed or published.
+Validation preceded publication. Verified release details are recorded in `.github/staging/modrinth-published-0.1.12.json`.
