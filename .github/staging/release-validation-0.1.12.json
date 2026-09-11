@@ -1,0 +1,11 @@
+{
+  "version": "0.1.12",
+  "java": 25,
+  "minecraft": "26.2",
+  "artifact": "totem-enchanting-0.1.12.jar",
+  "sha512": "abcbe4531d418b94f71a8ff34c6cedc87bbe895d1694aa88aab1f495f8163e9c038f3664468186de66a0561facfb4679121e1763eb46471951356a2d930f6f2c",
+  "unit_tests": 0,
+  "server_gametests": 5,
+  "client_validation": "TotemEnchanting production native-screen client GameTest passed; screenshots and review in test-artifacts.",
+  "independent_review": "Independent source and visual review passed with no remaining findings."
+}

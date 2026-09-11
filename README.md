@@ -3,22 +3,22 @@
 TotemEnchanting 讓雕紋書櫃依內部實際書本提供附魔力，並把附魔台的可用
 力量上限從原版 15 書櫃擴展到 **64**。
 
-目前候選版本為 **0.1.5**，精確搭配 TotemCore **0.6.0**。
+目前版本為 **0.1.12**，支援 TotemCore **0.7.18 以上、低於 0.8.0**。
 
 ## 安裝
 
 建議 Client 與 Server 都放入：
 
 1. Fabric API `0.154.2+26.2`
-2. TotemCore `0.6.0`
-3. TotemEnchanting `0.1.5`
+2. TotemCore `0.7.18`
+3. TotemEnchanting `0.1.12`
 
 | 項目 | 需求 |
 | --- | --- |
 | Minecraft | 26.2 |
 | Fabric Loader | 0.19.3+ |
 | Java | 25+ |
-| 必要 Totem 模組 | `totem-core =0.6.0` |
+| 必要 Totem 模組 | `totem-core >=0.7.18 <0.8.0` |
 
 Enchanting 不依賴其他功能模組，也不新增自訂附魔 ID。舊整合 JAR 不應再與
 獨立 TotemEnchanting 並用。
@@ -81,3 +81,9 @@ Minecraft 附魔定義有自己的有效 power 區間；直接把 64 丟進原�
 0.1.3 已通過 3/3 required Fabric GameTests，涵蓋普通書、複合附魔書、
 64 點上限與附魔台 option 計算。所有權與驗證規則見
 [EXTRACTION.md](EXTRACTION.md)。
+
+## 附魔金蘋果
+
+放入一顆金蘋果；有效附魔力達 **54～64** 時，第三個選項會將它轉成一顆附魔金蘋果。
+生存模式需要達到選項顯示的等級，實際消耗 **3 級經驗與 3 顆青金石**。
+低於 54 附魔力不會出現此選項；一般裝備的附魔方式不變。

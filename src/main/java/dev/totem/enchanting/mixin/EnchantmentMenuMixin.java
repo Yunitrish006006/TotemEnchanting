@@ -73,6 +73,17 @@ public abstract class EnchantmentMenuMixin {
     public void slotsChanged(Container container) {
         if (container == this.enchantSlots) {
             ItemStack itemStack = container.getItem(0);
+            if (itemStack.is(Items.GOLDEN_APPLE)) {
+                java.util.Arrays.fill(this.costs, 0);
+                java.util.Arrays.fill(this.enchantClue, -1);
+                java.util.Arrays.fill(this.levelClue, -1);
+                this.access.execute((level, pos) -> {
+                    int power = EnchantingPowerHelper.calculateBookPower(level, pos);
+                    if (power >= 54 && itemStack.getCount() == 1) this.costs[2] = power;
+                    ((EnchantmentMenu) (Object) this).broadcastChanges();
+                });
+                return;
+            }
             if (!itemStack.isEmpty() && itemStack.isEnchantable()) {
                 this.access.execute((level, pos) -> {
                     int bookPower = EnchantingPowerHelper.calculateBookPower(level, pos);
@@ -116,6 +127,48 @@ public abstract class EnchantmentMenuMixin {
                 }
             }
         }
+    }
+
+    /** One apple per transaction; recheck the actual shelves and resources at click time. */
+    @Inject(method = "clickMenuButton", at = @At("HEAD"), cancellable = true)
+    private void totem$enchantGoldenApple(net.minecraft.world.entity.player.Player player, int button,
+                                         CallbackInfoReturnable<Boolean> cir) {
+        ItemStack input = this.enchantSlots.getItem(0);
+        if (!input.is(Items.GOLDEN_APPLE)) return;
+        var menu = (EnchantmentMenu) (Object) this;
+        ItemStack lapis = this.enchantSlots.getItem(1);
+        if (button != 2 || input.getCount() != 1 || this.costs[2] < 54 || this.costs[2] > 64
+                || player.isSpectator() || player.containerMenu != menu || !menu.stillValid(player)
+                || (!player.hasInfiniteMaterials() && (player.experienceLevel < this.costs[2]
+                || !lapis.is(Items.LAPIS_LAZULI) || lapis.getCount() < 3))) {
+            cir.setReturnValue(false);
+            return;
+        }
+        // Vanilla screens call this locally before sending the menu-button packet. Only the server mutates.
+        if (!(player instanceof net.minecraft.server.level.ServerPlayer serverPlayer)) {
+            cir.setReturnValue(true);
+            return;
+        }
+        cir.setReturnValue(this.access.evaluate((level, pos) -> {
+            int power = EnchantingPowerHelper.calculateBookPower(level, pos);
+            if (power < 54 || power != this.costs[2]) {
+                this.slotsChanged(this.enchantSlots);
+                return false;
+            }
+            ItemStack result = input.transmuteCopy(Items.ENCHANTED_GOLDEN_APPLE);
+            player.onEnchantmentPerformed(input, 3);
+            lapis.consume(3, player);
+            this.enchantSlots.setItem(0, result);
+            if (lapis.isEmpty()) this.enchantSlots.setItem(1, ItemStack.EMPTY);
+            this.enchantmentSeed.set(player.getEnchantmentSeed());
+            this.enchantSlots.setChanged();
+            player.awardStat(net.minecraft.stats.Stats.ENCHANT_ITEM);
+            net.minecraft.advancements.triggers.CriteriaTriggers.ENCHANTED_ITEM.trigger(serverPlayer, result, 3);
+            menu.broadcastChanges();
+            level.playSound(null, pos, net.minecraft.sounds.SoundEvents.ENCHANTMENT_TABLE_USE,
+                    net.minecraft.sounds.SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
+            return true;
+        }, false));
     }
 
     /**

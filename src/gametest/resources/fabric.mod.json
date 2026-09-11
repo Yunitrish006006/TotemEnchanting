@@ -3,11 +3,15 @@
   "id": "totem-enchanting-gametest",
   "version": "1.0.0",
   "name": "TotemEnchanting GameTests",
-  "environment": "server",
+  "environment": "*",
   "entrypoints": {
     "fabric-gametest": [
       "dev.totem.enchanting.gametest.EnchantingPowerGameTest",
-      "dev.totem.enchanting.gametest.EnchantingManualGameTest"
+      "dev.totem.enchanting.gametest.EnchantingManualGameTest",
+      "dev.totem.enchanting.gametest.GoldenAppleEnchantingGameTest"
+    ],
+    "fabric-client-gametest": [
+      "dev.totem.enchanting.client.GoldenAppleVisualGameTest"
     ]
   },
   "depends": {

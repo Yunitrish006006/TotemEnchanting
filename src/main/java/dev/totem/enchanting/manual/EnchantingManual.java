@@ -16,7 +16,8 @@ public final class EnchantingManual {
             List.of(
                     "book.totem.enchanting_manual.page.1",
                     "book.totem.enchanting_manual.page.2",
-                    "book.totem.enchanting_manual.page.3"
+                    "book.totem.enchanting_manual.page.3",
+                    "book.totem.enchanting_manual.page.4"
             )
     );
 

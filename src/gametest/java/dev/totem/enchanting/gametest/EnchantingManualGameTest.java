@@ -20,7 +20,7 @@ public final class EnchantingManualGameTest {
             helper.fail("Enchanting manual section was not registered");
             return;
         }
-        if (section.order() != 400 || section.pageKeys().size() != 3) {
+        if (section.order() != 400 || section.pageKeys().size() != 4) {
             helper.fail("Enchanting manual section did not include the Bane target reference page");
             return;
         }

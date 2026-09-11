@@ -8,5 +8,6 @@
   "book.totem.enchanting_manual.title": "Enchanting Method Guide",
   "book.totem.enchanting_manual.page.1": "POWER\n\nPlace Chiseled Bookshelves in valid vanilla shelf positions. Normal books add 1 power; enchanted books add their total enchantment levels.",
   "book.totem.enchanting_manual.page.2": "QUALITY\n\nValid shelves combine up to 64 power. Keep air between shelf and table. Higher power improves candidates without bypassing vanilla compatibility.",
-  "book.totem.enchanting_manual.page.3": "BANE OF ARTHROPODS\n\nIn addition to vanilla arthropods, Bane also affects Skeletons, Strays, Bogged, Wither Skeletons, Skeleton Horses, and Parched. Vanilla bonus damage and Slowness still apply."
+  "book.totem.enchanting_manual.page.3": "BANE OF ARTHROPODS\n\nIn addition to vanilla arthropods, Bane also affects Skeletons, Strays, Bogged, Wither Skeletons, Skeleton Horses, and Parched. Vanilla bonus damage and Slowness still apply.",
+  "book.totem.enchanting_manual.page.4": "GOLDEN APPLES\n\nAt 54–64 shelf power, place one golden apple in the table. The third option converts it to an enchanted golden apple. Meet the displayed level; spend 3 levels and 3 lapis."
 }
