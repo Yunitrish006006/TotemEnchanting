@@ -22,7 +22,7 @@ public final class GoldenAppleVisualGameTest implements FabricClientGameTest {
     public void runTest(ClientGameTestContext context) {
         context.getInput().resizeWindow(1280, 720);
         try (var world = context.worldBuilder().create()) {
-            world.getClientLevel().waitForChunksRender();
+            world.getConnection().waitForChunksRender();
             world.getServer().runOnServer(server -> {
                 var player = server.getPlayerList().getPlayers().getFirst();
                 player.setGameMode(GameType.SURVIVAL);

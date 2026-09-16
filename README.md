@@ -3,22 +3,22 @@
 TotemEnchanting 讓雕紋書櫃依內部實際書本提供附魔力，並把附魔台的可用
 力量上限從原版 15 書櫃擴展到 **64**。
 
-目前版本為 **0.1.12**，支援 TotemCore **0.7.18 以上、低於 0.8.0**。
+目前版本為 **0.1.14**，支援 TotemCore **0.7.18 以上、低於 0.8.0**。
 
 ## 安裝
 
 建議 Client 與 Server 都放入：
 
-1. Fabric API `0.154.2+26.2`
+1. Fabric API `0.160.5+26.3`
 2. TotemCore `0.7.18`
 3. TotemEnchanting `0.1.12`
 
 | 項目 | 需求 |
 | --- | --- |
-| Minecraft | 26.2 |
-| Fabric Loader | 0.19.3+ |
+| Minecraft | 26.3 |
+| Fabric Loader | 0.19.5+ |
 | Java | 25+ |
-| 必要 Totem 模組 | `totem-core >=0.7.21 <0.8.0` |
+| 必要 Totem 模組 | `totem-core >=0.7.22 <0.8.0` |
 
 Enchanting 不依賴其他功能模組，也不新增自訂附魔 ID。舊整合 JAR 不應再與
 獨立 TotemEnchanting 並用。
